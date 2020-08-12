@@ -108,8 +108,8 @@
 
 
 .pin-ds {
-    margin: 4px;
-    padding: 3px;
+    margin: 5px;
+    padding: 4px;
 }
 
 .pin-ds p {
@@ -118,7 +118,7 @@
 
 .mon-cash-ds {
     background: red;
-    width: 30%;
+    width: 32%;
     color: white;
     margin: 4px;
     padding: 5px;
