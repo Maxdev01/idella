@@ -13,19 +13,18 @@
             <p>{{ i.description }}</p>
             <!-- <p><img src="{{ i.image.url }}" alt="{{ i.title }}"></p> -->
             <div>
-                <p>
-                    
-                    {% with lien=i.url ok=request.user.myuser.get.course.all %}
-
+                {% with lien=i.url ok=request.user.myuser.get.course.all %}
+                {{ lien }} - {{ ok.0 }}
                     {% for c in ok %}
-                    <a href="{% if c.active and i.id == c.id %}{{lien}}{% else %} {% url 'pin' i.id %} {% endif %}">
+                    <p><a href="{% if c.active and i.id == c.id %}{{lien}}{% else %} {% url 'pin' i.id %} {% endif %}">
                         {% if c.active and i.id == c.id %}Commenser{% else %}Acheter ce cours{% endif %}</a></p>
+                    {% empty %}
+                    <p><a href=" {% url 'pin' i.id %} ">Acheter ce cours</a></p>
                     {% endfor %}
-        
-                    {% endwith %}
+    
+                {% endwith %}
                     
             </div>
-
         </div>
         {% endfor %}
 
