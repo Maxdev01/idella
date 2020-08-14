@@ -13,6 +13,7 @@ def home(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
+            Students.objects.create(user=user)
             messages.success(request, 'Votre compte a ete cree avec succes')
         else:
             messages.error(request, 'Verifier vos informations')
@@ -23,7 +24,6 @@ def home(request):
 
 def cours(request):
     cours = Courses.objects.all()
-    student = Students.objects.get(user=request.user)
     return render(request, "nos-cours.html", {'cours': cours})
 
 def activatePIN(request, id=None):

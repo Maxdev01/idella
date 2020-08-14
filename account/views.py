@@ -42,7 +42,8 @@ def register(request):
          user = form.save(commit=False)
          user.set_password(form.cleaned_data['password'])
          user.save()
-         Students.objects.create(user=user)
+         stud = Students(user=user)
+         stud.save()
          return redirect(user_login)
       messages.error(request, 'formulaire non valid')
 
