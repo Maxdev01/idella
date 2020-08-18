@@ -10,16 +10,16 @@
         {% for i in cours %}
         <div class="element-column">
             <h3>{{ i.title }}</h3>
-            <p>{{ i.description }}</p>
+            <p style="margin-bottom: 30px;">{{ i.description }}</p>
             <!-- <p><img src="{{ i.image.url }}" alt="{{ i.title }}"></p> -->
             <div>
                 {% with lien=i.url ok=request.user.myuser.get.course.all %}
                 {{ lien }} - {{ ok.0 }}
-                    {% for c in ok %}
-                    <p><a href="{% if c.active and i.id == c.id %}{{lien}}{% else %} {% url 'pin' i.id %} {% endif %}">
-                        {% if c.active and i.id == c.id %}Commenser{% else %}Acheter ce cours{% endif %}</a></p>
+                    {% for c in ok %} 
+                    <p><a href="{% if c.active and i.id == c.id %}{{lien}}{% else %} {% url 'pin' i.id %} {% endif %}" class="btn-special"> 
+                        {% if c.active and i.id == c.id %}Commenser{% else %}Acheter ce cours{% endif %}</a></p> <br>
                     {% empty %}
-                    <p><a href=" {% url 'pin' i.id %} ">Acheter ce cours</a></p>
+                     <p><a href=" {% url 'pin' i.id %} " class="btn-special">Acheter ce cours</a></p> 
                     {% endfor %}
     
                 {% endwith %}
