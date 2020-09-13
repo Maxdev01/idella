@@ -25,13 +25,13 @@
    		  <ul>
 				   <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
 				   <li><a href="{% url 'nos-cours' %}">Cours</a></li>
-   				<li><a href="#">Compte</a></li>
+   				
    		 		<li><a href="{% url 'logout' %}">Deconnection</a></li>
    			</ul>
    			{% else %}
    			<ul>
    				<li><a href="{% url 'home' %}">Accueil</a></li>
-				<li><a href="#">A propos</a></li>
+				<li><a href="{% url 'about' %}">A propos</a></li>
 				<li><a href="{% url 'confident'%}">Confidentialite</a></li>
 				<li><a href="{% url 'donation'%}" >Don</a></li>
 				<li><a href="{% url 'login' %}">Connecter</a></li>
