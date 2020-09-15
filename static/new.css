@@ -141,6 +141,8 @@
     font-size: inherit;
     color: #bbe1fa;
     margin-top: 20px;
+    height: 45px;
+    border-radius: 10px;
     
  
  }
@@ -171,5 +173,33 @@
 
 
 .font-p {
-    font-size: 18px;
+    font-size: 17px;
 }
+
+.ds-email
+{
+    font-size: 15px;
+    background: #3282b8;
+    width: 20%;
+    height: 35px;
+    box-shadow: 5px 2px 3px rgb(245, 239, 239);
+}
+
+.ds-email a 
+{
+    text-decoration: none;
+    font-size: 17px;
+    margin: 2px;
+    padding: 2px;
+    color: #dde5f1;
+}
+
+.donate-color 
+{
+    background: #dde5f1;
+}
+
+
+/* modification pour le page d'accueil */ 
+
+

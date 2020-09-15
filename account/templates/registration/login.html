@@ -7,9 +7,9 @@
 
 <div class="b-form center form-90">
 {% if form.errors %}
-   <p>Provide a valide username and password!</p>
+   <h2>Provide a valide username and password!</h2>
 {% else %}
-   <p>Utiliser ce formulaire pour vous connecter, Merci!</p>
+   <h2 style="color: #081e3f;">Utiliser ce formulaire pour vous connecter, Merci!</h2>
 {% endif %}
 <form method="post" action="{% url 'login' %}">
    {{form.as_p}}
@@ -17,7 +17,7 @@
    <input type="hidden" name="next" value="{% url 'home' %}">
    <input class='btn' type="submit" value="Se connecter">
 </form>
-<p>Vous n'avez pas de compte, <a href="{% url 'register' %}">Creer un compte.</a></p>
+<p> <strong>Vous n'avez pas de compte,</strong> <a href="{% url 'register' %}"> <strong>Creer un compte.</strong> </a></p>
 </div>
 
 {% endblock %}
